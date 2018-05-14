@@ -28,11 +28,12 @@ class App extends React.Component {
         };
         //TODO Some of this bindings are not needed anymore
         //handleSubmit and handleChange can be removed but handleDelete not. Fix that
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.handleDelete = this.handleDelete.bind(this);
-        this.handleCancel = this.handleCancel.bind(this);
-        this.handleUpdate = this.handleUpdate.bind(this);
+        // task is done
+        // this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
+        // this.handleDelete = this.handleDelete.bind(this);
+        // this.handleCancel = this.handleCancel.bind(this);
+        // this.handleUpdate = this.handleUpdate.bind(this);
     }
     componentDidMount = () => {
         fetch(`http://localhost:5000/api/posts`)
@@ -72,7 +73,7 @@ class App extends React.Component {
         this.setState({ search: this.searchRef.current.value });
     };
 
-    handleDelete(id) {
+    handleDelete = id => {
         //TODO this could be replaced by a native fetch
         axios
             .delete(`http://localhost:5000/api/posts/${id}`)
@@ -88,9 +89,9 @@ class App extends React.Component {
             .catch(function(error) {
                 console.log('Error: ', error);
             });
-    }
+    };
 
-    handleUpdate(event, post) {
+    handleUpdate = (event, post) => {
         //TODO this could be replaced by a native fetch
         event.preventDefault();
         axios
@@ -107,7 +108,7 @@ class App extends React.Component {
             .catch(function(error) {
                 console.log('Error: ', error);
             });
-    }
+    };
     handleEdit = post => {
         this.setState({
             form: post,
