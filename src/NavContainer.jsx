@@ -4,7 +4,7 @@ import DesktopNav from './DesktopNav.jsx';
 
 //TODO this file doesnt need the props, it is just stupid passing the props to DesktopNav & SideBar
 //Replace with context https://reactjs.org/docs/context.html
-export default function NavContainer(props) {
+export default function NavContainer() {
     return (
         <div>
             <nav>

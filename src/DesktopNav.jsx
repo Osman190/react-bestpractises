@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeContext } from './App.jsx';
 
-export default function DesktopNav(props) {
+export default function DesktopNav() {
     return (
         <ThemeContext.Consumer>
             {theme => (
